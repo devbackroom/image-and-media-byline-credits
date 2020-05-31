@@ -1,0 +1,11 @@
+.image-credit {
+    padding: 5px 0;
+    font-size: 12px;
+}
+.image-caption {
+    font-weight: bold;
+}
+.image-byline {
+    color: #929292;
+    font-style: italic;
+}
