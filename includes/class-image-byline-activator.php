@@ -23,14 +23,14 @@
 class Image_Byline_Activator {
 
 	/**
-	* Add the photographer role.
+	* Activate actions.
 	*
-	* Add the photographer role for assigning image bylines.
+	* Actions to do on activation of the plugin.
 	*
 	* @since    1.0.0
 	*/
 	public static function activate() {
-		add_role('photographer', __('Photographer'), array('read' => true,));
+
 	}
 
 }

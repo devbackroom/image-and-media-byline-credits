@@ -234,7 +234,7 @@ class Image_Byline_Admin {
 		}
 		?>
 		<input type="text" name="imageByline_options[before_byline]" value="<?php echo $value; ?>">
-		<td class="align-top"><em><?php echo __( 'A short label to show before the byline/credit e.g. Source: ', 'image-byline' ); ?></em></td>
+		<td class="align-top"><em><?php echo __( 'A short label to show before the byline/credit e.g. Source:.', 'image-byline' ); ?></em></td>
 		<?php
 
 	}

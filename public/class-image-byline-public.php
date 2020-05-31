@@ -114,7 +114,14 @@ class Image_Byline_Public {
 			}
 		}
 
-		return '<div class="image-credit"><span class="image-caption">'.$caption.'</span> Source: '.$byline.'</div>';
+		$options = get_option( 'imageByline_options' );
+		if ( !empty($options['before_byline']) ) {
+			$before_byline = $options['before_byline'];
+		} else {
+			$before_byline = '';
+		}
+
+		return '<div class="image-credit"><span class="image-caption">'.$caption.'</span> '.$before_byline.' '.$byline.' </div>';
 	}
 
 }
