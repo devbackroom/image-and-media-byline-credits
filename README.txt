@@ -1,6 +1,6 @@
 === Image Byline ===
 Contributors: devbackroom
-Tags: image byline, image credit, byline, credit, image, featured, thumbnail, source, media
+Tags: image byline, image credit, byline, credit, image, featured, thumbnail, attachment, media, Gutenberg image block, gallery
 Donate link: https://www.devbackroom.com/donate
 Requires at least: 4.6.0
 Tested up to: 5.4.1
@@ -8,13 +8,14 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
-This plugin adds a byline credit to images.
+A simple way to add a byline credit to your images and other media.
 
 == Description ==
-This plugin adds a byline credit to images and other media items. You can do the following:
+This plugin makes it easy for you to add a byline credit to your images and other media. You can do the following:
 
 * Add a byline credit field when uploading media.
-* Automatically display the byline credit under featured images and other images in your blog.
+* Automatically display the byline credit under featured images
+* Automatically display the byline credit under images added with the Gutenberg image block.
 * Include an optional link to the web page of the content owner or creator.
 * Add freeform byline credit via a shortcode e.g. `[byline]Picture by Green Ant Media[/byline]` for more complex attribution or for a variety of media types.
 * Use a list of users with a specified role or a simple list to autocomplete the names on the Byline field.
@@ -35,7 +36,7 @@ Yes. There is a shortcode that can be used in the content of a blog or a page. T
 
 = Does the byline credit work with Gutenberg image block? =
 
-Yes. The byline credit is automatically added to the caption for the core image block.
+Yes. The byline credit is automatically added to the caption for the Gutenberg core image block.
 
 = Are other Gutenberg block supported? =
 
