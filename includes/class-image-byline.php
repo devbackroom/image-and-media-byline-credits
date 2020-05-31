@@ -182,7 +182,9 @@ class Image_Byline {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
-		$this->loader->add_filter( 'the_post_thumbnail_caption', $plugin_public, 'add_byline_to_caption' );
+
+		$this->loader->add_filter( 'wp_get_attachment_caption', $plugin_public, 'add_byline_to_caption' );
+		$this->loader->add_action( 'init', $plugin_public, 'byline_register_image' );
 
 	}
 

@@ -91,11 +91,11 @@ class Image_Byline_Public {
 	* @since    1.0.0
 	*/
 	public function shortcode_byline($atts, $content='') {
-		return '<span class="image-byline">' . $content . '</span>';
+		return '<figcaption class="image-credit"><span class="image-byline">' . $content . '</span></figcaption>';
 	}
 
 	/**
-	* Add the byline/description to the caption.
+	* Add the byline to the caption.
 	*
 	* @since    1.0.0
 	*/
@@ -121,7 +121,34 @@ class Image_Byline_Public {
 			$before_byline = '';
 		}
 
-		return '<div class="image-credit"><span class="image-caption">'.$caption.'</span> '.$before_byline.' '.$byline.' </div>';
+		return '<figcaption class="image-credit"><span class="image-caption">'.$caption.'</span> '.$before_byline.' '.$byline.' </figcaption>';
+	}
+
+	/**
+	* Add the byline credit to the core image block.
+	*
+	* @since    1.0.0
+	*/
+	function byline_image_render( $attributes, $content ) {
+
+		$attachment = get_post($attributes['id']);
+		$caption = wp_get_attachment_caption( $attributes['id'] );
+		$old_caption = '<figcaption>'.$attachment->post_excerpt.'</figcaption>';
+
+		return str_replace($old_caption, $caption, $content);
+
+	}
+
+	/**
+	* Register the core image block with a render callback.
+	*
+	* @since    1.0.0
+	*/
+	function byline_register_image() {
+
+		register_block_type( 'core/image', array(
+			'render_callback' => array( $this, 'byline_image_render'),
+		) );
 	}
 
 }
