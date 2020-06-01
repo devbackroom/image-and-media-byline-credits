@@ -13,9 +13,9 @@
 * @package           Image_Byline
 *
 * @wordpress-plugin
-* Plugin Name:       Image Byline
+* Plugin Name:       Image and Media Byline Credits
 * Plugin URI:        https://www.devbackroom.com/
-* Description:       A simple way to add a byline credit to your images and other media.
+* Description:       A simple way to add a byline credit to your images, media and other content.
 * Version:           1.0.0
 * Author:            DevBackroom
 * Author URI:        https://www.devbackroom.com/

@@ -11,3 +11,12 @@
     color: #929292;
     font-style: italic;
 }
+.no-credit .image-credit {
+    visibility: collapse;
+}
+.no-credit .image-credit .image-caption {
+    visibility: visible;
+}
+.no-caption .image-caption {
+    display: none;
+}
