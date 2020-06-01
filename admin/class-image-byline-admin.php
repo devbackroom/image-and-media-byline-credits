@@ -121,13 +121,13 @@ class Image_Byline_Admin {
 	function byline_attachment_fields( $form_fields, $post ) {
 
 		$form_fields['byline'] = array(
-			'label' => __('Byline/Credit', 'image-byline'),
+			'label' => __('Byline Credit', 'image-byline'),
 			'input' => 'text',
 			'value' => get_post_meta( $post->ID, '_byline', true )
 		);
 
 		$form_fields['byline_link'] = array(
-			'label' => __('Byline/Credit Link', 'image-byline'),
+			'label' => __('Byline Credit Link', 'image-byline'),
 			'input' => 'text',
 			'value' => get_post_meta( $post->ID, '_byline_link', true )
 		);
@@ -189,14 +189,14 @@ class Image_Byline_Admin {
 
 		add_settings_section(
 			'imageByline_group_section',
-			__( 'General', 'image-byline' ),
+			__( 'General Options', 'image-byline' ),
 			array( $this, 'settings_section_callback' ),
 			'imageByline_group'
 		);
 
 		add_settings_field(
 			'before_byline',
-			__( 'Prefix byline/credit', 'image-byline' ),
+			__( 'Prefix byline credit', 'image-byline' ),
 			array( $this, 'before_byline_render' ),
 			'imageByline_group',
 			'imageByline_group_section'
@@ -234,7 +234,7 @@ class Image_Byline_Admin {
 		}
 		?>
 		<input type="text" name="imageByline_options[before_byline]" value="<?php echo $value; ?>">
-		<td class="align-top"><em><?php echo __( 'A short label to show before the byline/credit e.g. Source:.', 'image-byline' ); ?></em></td>
+		<td class="align-top"><em><?php esc_html_e( 'A short label to show before the byline credit e.g. Source:.', 'image-byline' ); ?></em></td>
 		<?php
 
 	}
@@ -261,7 +261,7 @@ class Image_Byline_Admin {
 
 		?>
 		<select name="imageByline_options[search_suggestions_role]"><?php echo $select_options; ?></select>
-		<td class="align-top"><em><?php echo __( 'You can use a user role to automatically get a list of sources to show in the Media Library Byline/Credit field suggestions. Leave this field blank if you just want to use the simple list.', 'image-byline' ); ?></em></td>
+		<td class="align-top"><em><?php esc_html_e( 'You can use a user role to automatically get a list of sources to show in the Media Library Byline Credit field suggestions. Leave this field blank if you just want to use the simple list.', 'image-byline' ); ?></em></td>
 		<?php
 
 	}
@@ -281,7 +281,7 @@ class Image_Byline_Admin {
 
 		?>
 		<textarea cols='40' rows='30' name='imageByline_options[search_suggestions]'><?php echo $value; ?></textarea>
-		<td class="align-top"><em><?php echo __( 'A list of sources to show in the Media Library Byline/Credit field suggestions. Put each value on a new line. Leave this field blank if you just want to use a user role for your suggestions.', 'image-byline' ); ?></em></td>
+		<td class="align-top"><em><?php esc_html_e( 'A list of sources to show in the Media Library Byline Credit field suggestions. Put each value on a new line. Leave this field blank if you just want to use a user role for your suggestions.', 'image-byline' ); ?></em></td>
 		<?php
 
 	}
@@ -293,7 +293,7 @@ class Image_Byline_Admin {
 	*/
 	function settings_section_callback() {
 
-		echo __( 'Here you can configure your options for the Image Byline plugin. All the settings are optional.', 'image-byline' );
+		esc_html_e( 'Here you can configure your options for the Image and Media Byline Credits plugin. All the settings are optional.', 'image-byline' );
 
 	}
 
