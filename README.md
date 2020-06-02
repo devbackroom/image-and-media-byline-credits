@@ -1,6 +1,6 @@
-# Duplicate Post
+# Image and Media Byline Credits
 
-![Banner](assets/banner-772x250.png)
+![Banner](https://github.com/devbackroom/image-and-media-byline-credits/blob/master/assets/banner-1544%C3%97500.jpg)
 
 
 > Image and Media Byline Credits plugin for WordPress https://www.devbackroom.com/image-byline
