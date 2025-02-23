@@ -115,7 +115,7 @@ class Image_Byline_Public {
 		}
 
 		$options = get_option( 'imageByline_options' );
-		if ( !empty($options['before_byline']) ) {
+		if ( !empty($byline) && !empty($options['before_byline']) ) {
 			$before_byline = $options['before_byline'];
 		} else {
 			$before_byline = '';
@@ -129,7 +129,7 @@ class Image_Byline_Public {
 	*
 	* @since    1.0.0
 	*/
-	function byline_image_render( $attributes, $content ) {
+	public function byline_image_render( $attributes, $content ) {
 
 		$attachment = get_post($attributes['id']);
 		$caption = wp_get_attachment_caption( $attributes['id'] );
@@ -144,11 +144,30 @@ class Image_Byline_Public {
 	*
 	* @since    1.0.0
 	*/
-	function byline_register_image() {
+	public function byline_register_image() {
 
 		register_block_type( 'core/image', array(
 			'render_callback' => array( $this, 'byline_image_render'),
 		) );
+
+	}
+
+	/**
+	* Add the byline credit to the core image block - Introduced in WordPress 5.0
+	*
+	* @since    1.1.0
+	*/
+	public function byline_render_block_image($block_content, $block) {
+		if ($block['blockName'] !== 'core/image') {
+			return $block_content;
+		}
+
+		if (preg_match('/<figcaption.*?>(.*?)<\/figcaption>/s', $block_content, $matches)) {
+			$caption = $matches[1];
+			$block_content = $this->add_byline_to_caption($caption);
+		}
+		
+		return $block_content;
 	}
 
 }

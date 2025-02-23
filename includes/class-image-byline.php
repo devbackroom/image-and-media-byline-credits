@@ -185,6 +185,7 @@ class Image_Byline {
 
 		$this->loader->add_filter( 'wp_get_attachment_caption', $plugin_public, 'add_byline_to_caption' );
 		$this->loader->add_action( 'init', $plugin_public, 'byline_register_image' );
+		$this->loader->add_filter( 'render_block', $plugin_public, 'byline_render_block_image', 10, 2);
 
 	}
 

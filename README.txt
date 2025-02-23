@@ -3,7 +3,7 @@ Contributors: devbackroom
 Tags: image byline, image credit, byline, credit, image, featured, thumbnail, attachment, media, Gutenberg block, image block, gallery
 Donate link: https://www.devbackroom.com/donate
 Requires at least: 4.6.0
-Tested up to: 5.4.1
+Tested up to: 6.7.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -72,3 +72,5 @@ The byline shortcode can be used anywhere a shortcode can be used in a page or p
 == Changelog ==
 = 1.0.0 =
 * Initial version
+= 1.1.0 =
+* Updates for newer WordPress versions
